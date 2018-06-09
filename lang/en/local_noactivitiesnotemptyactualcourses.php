@@ -31,3 +31,7 @@ $string['targetlabelfilesonlyyes'] = 'There are files in the course';
 $string['targetlabelfilesonlyno'] = 'Files only';
 $string['indicator:onlyfiles'] = 'There are only file resources and a forum';
 $string['indicator:onlyfiles_help'] = 'This indicator reflects that this course has only file resources and a forum.';
+$string['indicator:nowactive'] = 'The course is now active';
+$string['indicator:nowactive_help'] = 'This indicator reflects that this course has a startdate before today and an enddate after today.';
+$string['indicator:teacherandstudentpresent'] = 'There are student and teachers enrolled';
+$string['indicator:teacherandstudentpresent_help'] = 'This indicator reflects that there is at least a teacher and a student enrolled.';
