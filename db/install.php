@@ -29,11 +29,16 @@ function xmldb_local_noactivitiesnotemptyactualcourses_install() {
 
     $usedtargets = $DB->get_fieldset_select('analytics_models', 'DISTINCT target', '');
 
-    $indicator = \core_analytics\manager::get_indicator('\local_noactivitiesnotemptyactualcourses\analytics\indicator\just_files_resources_and_a_forum');
-    $indicators = array($indicator->get_id() => $indicator);
+    // Instantiate indicators.
+    $indicator1 = \core_analytics\manager::get_indicator('\local_noactivitiesnotemptyactualcourses\analytics\indicator\now_active');
+    $indicator2 = \core_analytics\manager::get_indicator('\local_noactivitiesnotemptyactualcourses\analytics\indicator\teacher_and_student_present');
+    $indicator3 = \core_analytics\manager::get_indicator('\local_noactivitiesnotemptyactualcourses\analytics\indicator\just_files_resources_and_a_forum');
+    $indicators = array($indicator1->get_id() => $indicator1, $indicator2->get_id() => $indicator2, $indicator3->get_id() => $indicator3);
 
     if (!in_array('\local_noactivitiesnotemptyactualcourses\analytics\target\for_your_files_only', $usedtargets)) {
+        // Instantiate the target.
         $target = \core_analytics\manager::get_target('\local_noactivitiesnotemptyactualcourses\analytics\target\for_your_files_only');
+        // Create the model.
         $model = \core_analytics\model::create($target, $indicators, '\core\analytics\time_splitting\no_splitting');
         $model->enable();
     }

@@ -31,9 +31,9 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * No teaching target.
  *
- * @package    local_noactivitiesnotemptyactualcourses
- * @copyright  2018 Luca Bösch <luca.boesch@bfh.ch>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   local_noactivitiesnotemptyactualcourses
+ * @copyright 2018 Luca Bösch <luca.boesch@bfh.ch>
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class for_your_files_only extends \core_analytics\local\target\binary {
 
